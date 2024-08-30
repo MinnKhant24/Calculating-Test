@@ -25,11 +25,11 @@ class _MyWidgetState extends State<CalculatorUi> {
             ),
           ),
         ),
-        RowOne(),
-        RowTwo(),
-        RowThree(),
-        RowFour(),
-        RowFive(),
+        const RowOne(),
+        const RowTwo(),
+        const RowThree(),
+        const RowFour(),
+        const RowFive(),
       ],
     );
   }

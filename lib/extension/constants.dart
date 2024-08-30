@@ -33,3 +33,19 @@ Widget getButton(String operator, {Color color = Colors.grey}) {
             style: const TextStyle(fontSize: 30, color: Colors.white),
           )));
 }
+
+Widget getContainer(String character, {Color color = Colors.grey}) {
+  return Expanded(
+    child: Container(
+      decoration: BoxDecoration(
+          border: Border.all(style: BorderStyle.solid), color: color),
+      padding: const EdgeInsets.all(2),
+      child: Center(
+        child: Text(
+          character,
+          style: const TextStyle(fontSize: 45, color: Colors.white),
+        ),
+      ),
+    ),
+  );
+}

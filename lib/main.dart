@@ -1,6 +1,5 @@
-import 'package:counting_click/screen/calculating.dart';
-import 'package:counting_click/screen/color_button.dart';
-import 'package:counting_click/screen/calculator_ui.dart';
+import 'package:counting_click/constants/assets.dart';
+import 'package:counting_click/screen/calculator_test.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -20,7 +19,39 @@ class MyApp extends StatelessWidget {
             ),
             backgroundColor: Colors.blue,
           ),
-          body: CalculatorUi()),
+          body: MyCalculator()),
+    );
+  }
+}
+
+class BodyImport extends StatelessWidget {
+  const BodyImport({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Center(
+          child: SizedBox(
+              height: 200,
+              width: 200,
+              child: Image.asset(
+                Assets.assetsImage,
+                width: 10,
+                height: 10,
+                repeat: ImageRepeat.repeat,
+              )),
+        ),
+        ElevatedButton(
+            onPressed: () {
+              ScaffoldMessenger.of(context)
+                  .showSnackBar(const SnackBar(content: Text('Hey..!')));
+            },
+            child: const Text('Showing Snack Bar'))
+      ],
     );
   }
 }
@@ -72,6 +103,74 @@ class _BodyState extends State<Body> {
               )),
         ],
       ),
+    );
+  }
+}
+
+class ListTesting extends StatelessWidget {
+  const ListTesting({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      shrinkWrap: true,
+      //physics: ScrollPhysics(),
+      children: [
+        Container(
+          height: 100,
+          color: Colors.green,
+        ),
+        Container(
+          height: 100,
+          color: Colors.red,
+        ),
+        SizedBox(
+          height: 150,
+          child: ListView(
+            shrinkWrap: true,
+            //physics: ScrollPhysics(),
+            children: const [
+              Card(
+                elevation: 10,
+                child: ListTile(
+                  leading: Icon(Icons.abc),
+                  title: Text('This is title'),
+                  subtitle: Text('This is subtitle'),
+                  trailing: Icon(Icons.delete),
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  leading: Icon(Icons.abc),
+                  title: Text('This is title'),
+                  subtitle: Text('This is subtitle'),
+                  trailing: Icon(Icons.delete),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Container(
+          height: 100,
+          color: Colors.green,
+        ),
+        Container(
+          height: 100,
+          color: Colors.red,
+        ),
+        Container(
+          height: 100,
+          color: Colors.green,
+        ),
+        Container(
+          height: 100,
+          color: Colors.red,
+        ),
+        Container(
+          height: 100,
+          color: Colors.green,
+        ),
+      ],
     );
   }
 }
